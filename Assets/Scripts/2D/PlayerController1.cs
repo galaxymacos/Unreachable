@@ -10,6 +10,7 @@ public class PlayerController1 : MonoBehaviour
     private float horizontalMovement;
     private bool jump;
     private bool run;
+    public bool hanging;
     private bool facingRight;
     private float lastTapLeftTime;
     private float lastTapRightTime;
@@ -49,7 +50,14 @@ public class PlayerController1 : MonoBehaviour
         CheckRun();
         if (Input.GetButtonDown("Jump"))
         {
-            jump = true;
+            if (hanging)
+            {
+                hanging = false;                
+            }
+            else
+            {
+                jump = true;                
+            }
         }
     }
 
@@ -98,7 +106,7 @@ public class PlayerController1 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        playerMovement.Move(horizontalMovement, jump,run);
+        playerMovement.Move(horizontalMovement, jump,run,hanging);
         if (jump)
             jump = false;
     }

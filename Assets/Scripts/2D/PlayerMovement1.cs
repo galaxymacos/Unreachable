@@ -18,8 +18,10 @@ public class PlayerMovement1 : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    public void Move(float horizontalMovementValue, bool jump,bool run)
+    public void Move(float horizontalMovementValue, bool jump,bool run,bool hanging)
     {
+        if (hanging)
+            return;
         if (jump&&!airborne)
         {
             rb.AddForce(0,jumpForce,0);
