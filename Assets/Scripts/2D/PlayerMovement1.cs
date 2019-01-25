@@ -20,7 +20,7 @@ public class PlayerMovement1 : MonoBehaviour
 
     public void Move(float horizontalMovementValue, bool jump,bool run)
     {
-        if (jump)
+        if (jump&&!airborne)
         {
             rb.AddForce(0,jumpForce,0);
             airborne = true;

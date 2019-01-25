@@ -23,7 +23,19 @@ public class PlayerController1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalMovement = Input.GetAxisRaw("Horizontal");
+        if (Input.GetKey(KeyCode.A))
+        {
+            horizontalMovement = -1;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            horizontalMovement = 1;
+        }
+        else
+        {
+            horizontalMovement = 0;
+        }
+        
         if (horizontalMovement > 0f)
         {
             facingRight = true;
@@ -34,25 +46,41 @@ public class PlayerController1 : MonoBehaviour
             facingRight = false;
             OnFacingChange();
         }
-        if (horizontalMovement < -Mathf.Epsilon)
+        CheckRun();
+        if (Input.GetButtonDown("Jump"))
+        {
+            jump = true;
+        }
+    }
+
+    private void CheckRun()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
         {
             if (Time.time - lastTapLeftTime < tapSpeed)
             {
                 run = true;
             }
+            else
+            {
+                run = false;
+            }
+
             lastTapLeftTime = Time.time;
         }
-        if (horizontalMovement > Mathf.Epsilon)
+
+        if (Input.GetKeyDown(KeyCode.D))
         {
             if (Time.time - lastTapRightTime < tapSpeed)
             {
                 run = true;
             }
+            else
+            {
+                run = false;
+            }
+
             lastTapRightTime = Time.time;
-        }
-        if (Input.GetButtonDown("Jump"))
-        {
-            jump = true;
         }
     }
 
