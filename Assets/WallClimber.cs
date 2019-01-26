@@ -31,6 +31,14 @@ print("Climbing up");
                                      new Vector3(Player.transform.localScale.x/2, Player.transform.localScale.y/2);
             StartCoroutine(MovePlayer(targetPosition));
         }
+        else if (Player.transform.position.x > objToClimb.transform.position.x)    // player climbs wall on right
+        {
+//            RectTransform rt = (RectTransform) objToClimb.transform;
+//            RectTransform rtPlayer = (RectTransform) Player.transform;
+            Vector3 targetPosition = objToClimb.transform.position + new Vector3(objToClimb.transform.localScale.x/2, -objToClimb.transform.localScale.y/2, 0) +
+                                     new Vector3(Player.transform.localScale.x/2, Player.transform.localScale.y/2);
+            StartCoroutine(MovePlayer(targetPosition));
+        }
     }
 
     private IEnumerator MovePlayer(Vector3 newPosition)
