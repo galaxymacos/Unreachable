@@ -22,6 +22,7 @@ public class PlayerMovement1 : MonoBehaviour
     {
         if (hanging)
             return;
+        print("Jump: "+jump+" "+" Airborne: "+airborne);
         if (jump&&!airborne)
         {
             rb.AddForce(0,jumpForce,0);

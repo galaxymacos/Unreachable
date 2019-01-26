@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        agent = new NavMeshAgent();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
