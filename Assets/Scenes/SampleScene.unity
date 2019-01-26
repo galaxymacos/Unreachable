@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 94848945}
   - component: {fileID: 94848946}
   - component: {fileID: 94848947}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: GroundDetector (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 140842511}
   - component: {fileID: 140842513}
   - component: {fileID: 140842512}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: GroundDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,8 @@ GameObject:
   - component: {fileID: 268033590}
   - component: {fileID: 268033589}
   - component: {fileID: 268033588}
-  m_Layer: 10
+  - component: {fileID: 268033592}
+  m_Layer: 9
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,11 +384,40 @@ Transform:
   m_GameObject: {fileID: 268033587}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.13, y: -1.64, z: -0.2175651}
-  m_LocalScale: {x: 8.784, y: 1, z: 1}
+  m_LocalScale: {x: 8.784, y: 1, z: 5.1546}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &268033592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268033587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 23800000, guid: f7c9945270b56d541a387741f76c78e5, type: 2}
 --- !u!1 &307817582
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 307817583}
   - component: {fileID: 307817584}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: CellingDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +531,7 @@ GameObject:
   - component: {fileID: 502884775}
   - component: {fileID: 502884776}
   - component: {fileID: 502884777}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: WallDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,7 +589,7 @@ GameObject:
   - component: {fileID: 527548826}
   - component: {fileID: 527548827}
   - component: {fileID: 527548828}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: WallDetector (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +648,7 @@ GameObject:
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
   - component: {fileID: 534669906}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -732,7 +762,7 @@ GameObject:
   - component: {fileID: 903785778}
   - component: {fileID: 903785777}
   - component: {fileID: 903785776}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -826,7 +856,7 @@ GameObject:
   - component: {fileID: 1450876789}
   - component: {fileID: 1450876790}
   - component: {fileID: 1450876784}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1157,6 +1187,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797711494224934502, guid: 4c56e6e0e32771f45904787c7211618e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5204399823022621377, guid: 4c56e6e0e32771f45904787c7211618e,
         type: 3}
